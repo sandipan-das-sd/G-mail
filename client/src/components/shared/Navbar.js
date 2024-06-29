@@ -2,6 +2,8 @@ import React from 'react'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoSearch } from "react-icons/io5";
 import { FaRegCircleQuestion } from "react-icons/fa6";
+import { VscGear } from "react-icons/vsc";
+import { PiDotsNineBold } from "react-icons/pi";
 export default function navbar() {
   return (
     <div className=' flex items-center justify-between mx-3 h-16'>
@@ -34,13 +36,14 @@ export default function navbar() {
     </div>
 
     <div className='p-3 rounded-full hover:bg-gray-100 cursor-pointer '>
-    <FaRegCircleQuestion
+    <VscGear
     size={20} />
     </div>
 
     <div className='p-3 rounded-full hover:bg-gray-100 cursor-pointer '>
-    <FaRegCircleQuestion
-    size={20} />
+    <PiDotsNineBold 
+   
+    size={25} />
     </div>
     </div>
 
