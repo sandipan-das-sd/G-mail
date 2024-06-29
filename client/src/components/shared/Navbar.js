@@ -4,6 +4,7 @@ import { IoSearch } from "react-icons/io5";
 import { FaRegCircleQuestion } from "react-icons/fa6";
 import { VscGear } from "react-icons/vsc";
 import { PiDotsNineBold } from "react-icons/pi";
+import Avatar from 'react-avatar'
 export default function navbar() {
   return (
     <div className=' flex items-center justify-between mx-3 h-16'>
@@ -44,6 +45,9 @@ export default function navbar() {
     <PiDotsNineBold 
    
     size={25} />
+    </div>
+    <div className='cursor-pointer '>
+    <Avatar src='https://lh3.googleusercontent.com/ogw/AF2bZyih91jeOwcx1poWS5MfcMwAvrs0EPr1Ctva6_hYIJjsT2A=s32-c-mo' size='40' round={true} />
     </div>
     </div>
 
