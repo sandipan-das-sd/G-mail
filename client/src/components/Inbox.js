@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react'
-import { MdCropSquare, MdInbox } from "react-icons/md";
+import { MdCropSquare, MdInbox, MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { FaCaretDown, FaUserFriends } from "react-icons/fa";
 import { IoMdRefresh } from "react-icons/io";
 import { IoMdMore } from "react-icons/io";
@@ -39,6 +39,15 @@ export default function Inbox() {
           <div className='p-2 rounded-full hover:bg-gray-100 cursor-pointer'>
             <IoMdMore size={'20px'} />
           </div>
+        </div>
+        <div className='flex items-center gap-2'>
+        <p className='text-sm text-gray-500'> 1-50 of 1000</p>
+        <button className='hover:rounded-full hover:bg-gray-100'>
+          <MdKeyboardArrowLeft size={'20px'}/>
+        </button>
+        <button className='hover:rounded-full hover:bg-gray-100'>
+          <MdKeyboardArrowRight size={'20px'}/>
+        </button>
         </div>
 
       </div>
