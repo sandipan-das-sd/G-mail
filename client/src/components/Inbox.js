@@ -4,12 +4,15 @@ import { MdCropSquare, MdInbox } from "react-icons/md";
 import { FaCaretDown, FaUserFriends } from "react-icons/fa";
 import { IoMdRefresh } from "react-icons/io";
 import { IoMdMore } from "react-icons/io";
+import Messages from './Messages';
 
 const mailType=[
   {
     icon:<MdInbox size={'20px'}/>,
     text:'Primary'
+
   },
+  
   {
      icon: <img src="https://ssl.gstatic.com/ui/v1/icons/mail/gm3/2x/sell_fill_baseline_p600_20dp.png" alt="Promotion" style={{ width: '20px', height: '20px' }} />,
     text: 'Promotion'
@@ -59,6 +62,7 @@ export default function Inbox() {
           })
         }
         </div>
+        <Messages/>
 
       </div>
     </div>
