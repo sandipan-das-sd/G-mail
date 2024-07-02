@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { LuPencilLine } from "react-icons/lu";
 import { IoMdStarOutline } from "react-icons/io";
 import { MdOutlineWatchLater } from "react-icons/md";
@@ -33,10 +33,14 @@ const sidebarItems = [
     }
 ]
 export default function Sidebar() {
+    const [open,setOpen]=useState(false)
+  
     return (
         <div className='w-[15%]'>
             <div className='p-3'>
-                <button className='flex items-center gap-2 p-4 rounded-2xl hover:shadow-md bg-[#C2E7FF]'>
+                <button onClick={()=>{
+                    setOpen(true)
+                }} className='flex items-center gap-2 p-4 rounded-2xl hover:shadow-md bg-[#C2E7FF]'>
                     <LuPencilLine size={'24px'} />
                     Compose
                 </button>
