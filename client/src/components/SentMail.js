@@ -1,14 +1,21 @@
 import { RxCross1 } from "react-icons/rx"; 
 import React from 'react'
+import { useDispatch, useSelector } from "react-redux";
+import { setOpen } from "../redux/appSlice";
 
 export default function SentMail() {
+    const open=useSelector(store=>store.appSlice.open)
+    const dispatch=useDispatch()
   return (
-    <div className='bg-white max-w-6xl shadow-xl shadow-slate-600 rounded-t-md'>
+    <div className={`${open ? 'block' : 'hidden'} bg-white max-w-6xl shadow-xl shadow-slate-600 rounded-t-md`}>
+
       <div className='flex px-3 py-2 bg-[#F2F6FC] justify-between rounded-t-md'>
             <div>
                 New Message
             </div>
-            <div className="p-2 rounded-full hover: bg-gray-200 cursor-pointer">
+            <div onClick={()=>{
+                    dispatch(setOpen(false))
+            }} className="p-2 rounded-full hover: bg-gray-200 cursor-pointer">
                <RxCross1 size={"10px"}/> 
             </div>
       </div>
