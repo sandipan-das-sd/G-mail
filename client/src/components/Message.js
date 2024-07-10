@@ -22,7 +22,7 @@ export default function Message() {
         </div>
       </div>
       <div className=" flex-1 ml-4">
-        <p className="text-gray-600 truncate inline-block max-w-full">Lorem dsjfjafjsdfijfif jfsjsfjfjfn jjkkjgguuhu hhjfffffyyy ftdrrrdttt iuugddrddd</p>
+        <p className="text-gray-600 truncate inline-block max-w-full">Lorem dsjfjafjsdfijfif d</p>
 
       </div>
 
