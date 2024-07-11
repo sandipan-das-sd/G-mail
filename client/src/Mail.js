@@ -11,12 +11,23 @@ import {
   MdOutlineDriveFileMove,
 } from "react-icons/md";
 import { BiArchiveIn } from "react-icons/bi";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { deleteDoc, doc } from 'firebase/firestore'
+import {db} from './../src/firebase'
 
 export default function Mail() {
-  const navigate=useNavigate()
-  const [selectedEmails]=useSelector(store=>store.appSlice)
+  const navigate = useNavigate()
+  const { selectedEmails } = useSelector(store => store.appSlice)
+  const params=useParams()
+  const deleteMailById = async (id) => {
+    try {
+      await deleteDoc(doc(db, "emails", id))
+      navigate('/')
+    } catch (error) {
+      
+    }
+  }
   return (
     <div className='flex-1 bg-white rounded-xl mx-5 '>
       <div className='flex items-center justify-between px-4'>
@@ -32,7 +43,9 @@ export default function Mail() {
           <div className='p-2 rounded-full hover:bg-gray-100 cursor-pointer'>
             <MdKeyboardArrowRight size={'20px'} />
           </div>
-          <div className='p-2 rounded-full hover:bg-gray-100 cursor-pointer'>
+          <div onclick={() => {
+            deleteMailById(params.id)
+          }} className='p-2 rounded-full hover:bg-gray-100 cursor-pointer'>
             <MdDeleteOutline size={'20px'} />
           </div>
           <div className='p-2 rounded-full hover:bg-gray-100 cursor-pointer'>
