@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import React from 'react'
 import { MdCropSquare } from 'react-icons/md'
 
-export default function Message() {
+export default function Message({email}) {
   const navigate=  useNavigate();
   const openMail=()=>{
    
-    navigate('/mail/626655655')
+    navigate(`/mail/${email.id}`)
   }
   return (
     <div onClick={openMail} className='flex items-start  justify-between border-gray-200 px-4 py-3 text-sm hover:cursor-pointer hover:shadow-md'>
@@ -22,12 +22,12 @@ export default function Message() {
         </div>
       </div>
       <div className=" flex-1 ml-4">
-        <p className="text-gray-600 truncate inline-block max-w-full">Lorem dsjfjafjsdfijfif d</p>
+        <p className="text-gray-600 truncate inline-block max-w-full"> {email?.message}</p>
 
       </div>
 
       <div className=" flex-none text-gray-400 text-sm">
-        Time
+        <p> { new Date(email?.createdAt?.seconds*1000).toUTCString()}</p>
       </div>
     </div>
   )
